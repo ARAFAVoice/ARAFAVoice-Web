@@ -1,1 +1,160 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAFAVoice Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">A</div>
+            <div>
+                <h1>ARAFAVoice</h1>
+                <span>AI Voice Studio</span>
+            </div>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            جاهز لإنشاء الصوت
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <h2>حوّل النص إلى صوت طبيعي</h2>
+            <p>
+                أنشئ صوتًا احترافيًا باللغة العربية أو الإنجليزية
+                مع التحكم في الصوت والسرعة والنبرة.
+            </p>
+        </section>
+
+        <section class="studio">
+
+            <div class="text-panel">
+                <div class="panel-title">
+                    <h3>النص</h3>
+                    <span id="charCount">0 حرف</span>
+                </div>
+
+                <textarea
+                    id="textInput"
+                    placeholder="اكتب النص الذي تريد تحويله إلى صوت هنا..."
+                ></textarea>
+            </div>
+
+            <div class="settings-panel">
+
+                <div class="setting">
+                    <label for="language">لغة النص</label>
+                    <select id="language">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <div class="setting">
+                    <label for="dialect">اللهجة / النطق</label>
+                    <select id="dialect">
+                        <option value="ar-EG">المصرية</option>
+                        <option value="ar-SA">السعودية</option>
+                        <option value="ar-AE">الخليجية</option>
+                        <option value="ar">العربية الفصحى</option>
+                    </select>
+                </div>
+
+                <div class="setting">
+                    <label for="voice">الصوت</label>
+                    <select id="voice">
+                        <option value="female">صوت نسائي</option>
+                        <option value="male">صوت رجالي</option>
+                    </select>
+                </div>
+
+                <div class="setting">
+                    <label for="style">أسلوب الأداء</label>
+                    <select id="style">
+                        <option>طبيعي</option>
+                        <option>إخباري</option>
+                        <option>وثائقي</option>
+                        <option>هادئ</option>
+                        <option>حماسي</option>
+                    </select>
+                </div>
+
+                <div class="slider-setting">
+                    <div>
+                        <label for="speed">السرعة</label>
+                        <span id="speedValue">1.0x</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="speed"
+                        min="0.5"
+                        max="2"
+                        step="0.1"
+                        value="1"
+                    >
+                </div>
+
+                <div class="slider-setting">
+                    <div>
+                        <label for="pitch">حدة الصوت</label>
+                        <span id="pitchValue">0</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="pitch"
+                        min="-10"
+                        max="10"
+                        step="1"
+                        value="0"
+                    >
+                </div>
+
+                <button id="generateBtn" class="generate-btn">
+                    <span>🎙️</span>
+                    إنشاء الصوت
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="audio-panel">
+
+            <div class="audio-header">
+                <div>
+                    <h3>الصوت الناتج</h3>
+                    <p id="audioStatus">لم يتم إنشاء صوت بعد</p>
+                </div>
+
+                <button id="downloadBtn" class="download-btn" disabled>
+                    تحميل الصوت
+                </button>
+            </div>
+
+            <audio id="audioPlayer" controls></audio>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ARAFAVoice Web © 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
 

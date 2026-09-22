@@ -1,3 +1,6 @@
+const textInput = document.getElementById("textInput");
+const charCount = document.getElementById("charCount");
+const language = document.getElementById("language");
 ```javascript
 const textInput = document.getElementById("textInput");
 const charCount = document.getElementById("charCount");
